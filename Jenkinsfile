@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-               git url: 'https://github.com/dsoc3-dev1/DSOC3-WebApp-f.git', branch: 'main'
+               git url: 'https://github.com/dsoc3-dev1/DSOC3-WebApp-f.git'
             }
         }
         stage('compile') {
