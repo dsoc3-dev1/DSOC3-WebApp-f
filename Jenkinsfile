@@ -59,6 +59,7 @@ pipeline{
                 echo "Deploying...from branch ${params.BRANCH}"
                 sh '''
                 sudo cp target/dsoc3-webapp.war /var/lib/tomcat10/webapps/dsoc3-webapp.war
+                sudo systemctl restart tomcat10
                 '''
             }
         }//EO Deploy
