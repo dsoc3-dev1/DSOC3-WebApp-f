@@ -46,14 +46,14 @@ pipeline{
             }
         }//EO Parallel Stages    
         stage('Deploy'){
-            when {
+            /*when {
                 expression {
                //return env.GIT_BRANCH == 'origin/test'
                //return params.BRANCH == 'test'
                return params.BRANCH == 'test2' && (params.ENVIRONMENT == 'stage' || params.ENVIRONMENT == 'prod')
                 }
 
-            }
+            }*/
             steps{
                 //echo 'Deploying the DSOC3 WEB APP..'
                 echo "Deploying...from branch ${params.BRANCH}"
