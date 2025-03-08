@@ -26,10 +26,14 @@ pipeline{
                             echo 'Building the DSOC3 WEB APP..'
                             //echo "GIT_BRANCH: ${env.GIT_BRANCH}"
                             sh 'mvn -v'
+                        sh '''
+                         ls -lrt
+                         mvn compile test package
+                        '''
                             
                         }
                     }//EO Build
-                    stage('Test'){
+                    /*stage('Test'){
                         tools{
                             maven 'DSOC3'
                         }
@@ -37,7 +41,7 @@ pipeline{
                             echo 'Testing the DSOC3 WEB APP..'
                             sh 'mvn -v'
                         }
-                    }//EO Test
+                    }//EO Test*/
 
             }
         }//EO Parallel Stages    
@@ -53,6 +57,9 @@ pipeline{
             steps{
                 //echo 'Deploying the DSOC3 WEB APP..'
                 echo "Deploying...from branch ${params.BRANCH}"
+                sh '''
+                sudo cp target/dsoc3-webapp.war /var/lib/tomcat10/webapps/dsoc3-webapp.war
+                '''
             }
         }//EO Deploy
         
