@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent { label 'agent-1'}
     parameters{
         // String parameter for specifying a custom branch
        string(
