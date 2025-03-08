@@ -46,7 +46,7 @@ pipeline{
                 expression {
                //return env.GIT_BRANCH == 'origin/test'
                //return params.BRANCH == 'test'
-               return params.BRANCH == 'test' && (params.ENVIRONMENT == 'stage' || params.ENVIRONMENT == 'prod')
+               return params.BRANCH == 'test2' && (params.ENVIRONMENT == 'stage' || params.ENVIRONMENT == 'prod')
                 }
 
             }
